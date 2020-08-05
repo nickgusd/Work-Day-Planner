@@ -32,11 +32,7 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <ul>
-      
-        
-        
-      </ul>
+      <ul></ul>
     </div>
     <script type="text/javascript">
     $("#currentDay").append(moment().format('LLLL'));
@@ -52,9 +48,8 @@
           $("ul").append(li1)
           $("li").addClass("hour");
 
-        var textArea = $("<textarea>");
-        $("ul").append(textArea);  
-
+          var textArea = $("<textarea>");
+          $("ul").append(textArea); 
       }
 
           var buttons = $("<button>");
@@ -63,6 +58,40 @@
           $("button").addClass("saveBtn");
      
 
+         function renderText() {
+       
+          var events = $("textarea").val();
+
+          $("textarea").text(events);
+          $("textarea").attr("data-index", events);
+          $("textarea").attr("class", "textarea");
+
+           var data = $(this).attr("data-index");
+          $("textarea").append(data);
+
+          } 
+
+
+         $("button").on("click", function() {
+
+            var eventText = $(this).attr("data-index");
+            
+            localStorage.setItem("Activity", eventText);
+
+            var getText = JSON.parse(localStorage.getItem("textarea"));
+            $("textarea").text(eventText);
+
+          renderText();
+        });
+          
+          
+
+
+
+
+
+
+          
 
 
 
