@@ -32,110 +32,110 @@
     <div class="container">
       <!-- Timeblocks go here -->
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time1">
+          
         </div>
         <div class="col-sm-10">
           <textarea id = "textarea1"></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time2">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time3">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time4">
+         
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time5">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time6">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time7">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time8">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-1, hour">
-          9 am
+        <div class="col-sm-1 hour time9">
+          
         </div>
         <div class="col-sm-10">
           <textarea></textarea>
         </div>
-        <div class="col-sm-1, saveBtn">
+        <div class="col-sm-1 saveBtn">
           <i class="fa fa-floppy-o" id = "btn" aria-hidden="true"></i>
         </div>
       </div>
@@ -147,23 +147,65 @@
     
       $(document).ready(function() {
         //add current date
+
+        var schedule = ["9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm"]
+
+        for (var i = 0; i < schedule.length; i++) {
+   
+        var p = $("<p>");
+        var p1 = "<p>" + schedule[i] + "</p>"
+  
+        $(".hour").append(p1)
+        
+          
+
+      }
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+       /* function dataIndex() {
+       
+
+          var events = $("textarea").val();
+
+          $("textarea").text(events);
+          $("textarea").attr("data-index", events);
+          $("textarea").attr("class", "textarea");
+
+          var eventText = $(this).attr("data-index");
+          console.log(eventText);
+
+        } 
+      
+      
+
+
       $("#currentDay").append(moment().format('LLLL'));
         
         $("#btn").on("click", function() {
 
-            var text = $("textarea").val().trim();
+            var eventText = $(this).attr("data-index");
             
-            localStorage.setItem("Activity", text);
+            localStorage.setItem("Activity", eventText);
 
             var getText = JSON.parse(localStorage.getItem("textarea"));
-            $("#textarea1").text(text);
+            $("textarea").text(eventText);
 
-
+          dataIndex();
         })
 
-
       });
-    
+        */
     
     
     
