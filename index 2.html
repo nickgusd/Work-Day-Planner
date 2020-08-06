@@ -49,25 +49,30 @@
           $("li").addClass("hour");
 
           var textArea = $("<textarea>");
-          $("ul").append(textArea); 
+          $("ul").append(textArea)
+          
       }
 
           var buttons = $("<button>");
           $("li").append(buttons);
 
           $("button").addClass("saveBtn");
-     
+
+         
 
          function renderText() {
        
-          var events = $("textarea").val();
+         var events = $("textarea").val();
+         
+       
 
           $("textarea").text(events);
           $("textarea").attr("data-index", events);
-          $("textarea").attr("class", "textarea");
-
+          
+          
            var data = $(this).attr("data-index");
-          $("textarea").append(data);
+          $("textarea").append(data)
+          
 
           } 
 
@@ -75,11 +80,13 @@
          $("button").on("click", function() {
 
             var eventText = $(this).attr("data-index");
-            
-            localStorage.setItem("Activity", eventText);
+            var eventText = $("textarea").text($(this).val());
+            console.log(eventText[0]);
+            localStorage.setItem("Activity", eventText.val());
 
             var getText = JSON.parse(localStorage.getItem("textarea"));
-            $("textarea").text(eventText);
+            $("textarea").text(getText);
+            
 
           renderText();
         });
